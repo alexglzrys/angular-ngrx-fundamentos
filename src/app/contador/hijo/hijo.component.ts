@@ -26,4 +26,12 @@ export class HijoComponent implements OnInit {
     this.cambioContador.emit(this.contador);
   }
 
+  reset(nuevoValor: number) {
+    this.contador = nuevoValor;
+    // Notificar al componente padre el nuevo valor que tomará el contador tras el reseteo emitido por el nieto.
+    // ? Esta burbuja de emiir eventos hacia arriba se puede reemplazar por un servicio, donde se tenga definido el valor base y los métodos para alterar dicho valor
+    // * Otra forma cuando la aplicación es muy compleja es hacer uso del patró REDUX
+    this.cambioContador.emit(this.contador)
+  }
+
 }
