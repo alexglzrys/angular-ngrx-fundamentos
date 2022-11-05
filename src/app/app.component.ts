@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Suscripción al store para estar atentos cuando cambie el estado
+    // Suscripción al store para estar atentos cuando cambie o se inicialice el estado
     /*this.store.subscribe(state => {
       console.log(state);
       // Actualizar el estado interno del componente, con base al estado globla de la aplicación
