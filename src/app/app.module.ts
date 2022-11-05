@@ -8,6 +8,8 @@ import { NietoComponent } from './contador/nieto/nieto.component';
 // 3. Importar el módulo del Store y el reducer
 import { StoreModule } from '@ngrx/store';
 import { contadorReducer } from './contador/contador.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { contadorReducer } from './contador/contador.reducer';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({contador: contadorReducer})
+    StoreModule.forRoot({contador: contadorReducer}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
