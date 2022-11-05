@@ -23,11 +23,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Suscripción al store para estar atentos cuando cambie el estado
-    this.store.subscribe(state => {
+    /*this.store.subscribe(state => {
       console.log(state);
       // Actualizar el estado interno del componente, con base al estado globla de la aplicación
       this.contador = state.contador;
-    })
+    })*/
+
+    // Es estado puede ser un objeto complejo, por tanto podemos observar el cambio de algun path en el estado y reaccionar ante ello
+    this.store.select('contador').subscribe(contador => this.contador = contador);
   }
 
   incrementar() {
