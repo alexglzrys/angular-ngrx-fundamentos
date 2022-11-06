@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { decrementar, dividir, incrementar, multiplicar } from './contador.actions';
+import { decrementar, dividir, incrementar, multiplicar, reset } from './contador.actions';
 
 // 2. Declarar el reducer - estilo clásico
 /*export function contadorReducer(state: number = 10, action: Action) {
@@ -22,5 +22,6 @@ export const contadorReducer = createReducer(
   on(decrementar, (state) => state - 1),
   // Extraer la carga util para realizar la tarea
   on(multiplicar, (state, { numero }) => state * numero),
-  on(dividir, (state, { numero }) => state / numero )
+  on(dividir, (state, { numero }) => state / numero ),
+  on(reset, (state) => initialState)
 );

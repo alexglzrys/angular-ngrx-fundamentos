@@ -6,3 +6,4 @@ export const decrementar = createAction('[Contador] Decrementar');
 // Esta acción espera un objeto como payload
 export const multiplicar = createAction('[Contador] Multiplicar', props<{numero: number}>());
 export const dividir = createAction('[Contador] Dividir', props<{numero: number}>());
+export const reset = createAction('[Contador] Reset');

@@ -20,6 +20,9 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     StoreModule.forRoot({contador: contadorReducer}),
+    // Instalar Store DevTools para inspeccionar como se comporta el estado de la aplicación mediante Redux DevTools
+    // 1. ng add @ngrx/store-devtools@latest
+    // 2. instalar extensión en el navegador
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
